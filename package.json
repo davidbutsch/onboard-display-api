@@ -1,0 +1,33 @@
+{
+  "name": "onboard-display-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --require ts-node/register --watch src ./src/index.ts",
+    "prod": "cross-env NODE_ENV=production ts-node ./src/index.ts",
+    "start": "node ./dist/index.js",
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^24.10.0",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "module-alias": "^2.2.3",
+    "serialize-error": "^8.1.0",
+    "socket.io": "^4.8.1",
+    "winston": "^3.18.3",
+    "zod": "^4.1.12"
+  }
+}
