@@ -4,7 +4,7 @@ import { ZodTypeAny, z } from "zod";
 
 const validate = (
   schema: ZodTypeAny,
-  source: "body" | "params" | "query"
+  source: "body" | "params" | "query",
 ): RequestHandler => {
   return async (request, _response, next) => {
     try {
@@ -14,12 +14,12 @@ const validate = (
       // Pass BadRequestError for parse errors
       if (error instanceof z.ZodError)
         return next(
-          new BadRequestError(`Invalid request ${source}.`, error.errors)
+          new BadRequestError(`Invalid request ${source}.`, error.errors),
         );
 
       // Otherwise pass InternalServerError and include original error
       return next(
-        new InternalServerError(`Error parsing request ${source}.`, { error })
+        new InternalServerError(`Error parsing request ${source}.`, { error }),
       );
     }
   };
